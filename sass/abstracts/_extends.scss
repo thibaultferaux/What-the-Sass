@@ -1,0 +1,25 @@
+@use "../abstracts/variables" as vars;
+@use "sass:map";
+
+%flex-verticalCenter {
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+%flex-fullCenter {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+%buttonTransition {
+    color: map.get(vars.$colors, black);
+    background-color: map.get(vars.$colors, white);
+    transition: all .2s ease-in-out;
+
+    &:hover {
+        color: map.get(vars.$colors, white);
+        background-color: map.get(vars.$colors, black);
+    }
+}

@@ -1,0 +1,11 @@
+@use "../abstracts/variables" as vars;
+@use "sass:map";
+
+body {
+    color: map.get(vars.$colors, black);
+    font-family: vars.$text-font;
+}
+
+a {
+    color: map.get(vars.$colors, black);
+}

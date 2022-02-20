@@ -1,0 +1,35 @@
+@use '../abstracts/extends';
+@use "../abstracts/variables" as vars;
+@use "../abstracts/mixins" as mix;
+@use "../abstracts/functions" as func;
+
+@use "sass:map";
+
+.slider {
+    @extend %flex-verticalCenter;
+    position: relative;
+    >i {
+        @include mix.absolutePos(50%, auto, auto, auto);
+
+        font-size: func.pxtorem(70);
+        -webkit-text-stroke: 5px white;
+        color: map.get(vars.$colors, grey);
+        cursor: pointer;
+        opacity: .2;
+
+        &:hover {
+            color: map.get(vars.$colors, black);
+        }
+    }
+    .arrow-left {
+        left: -40px;
+    }
+    .arrow-right {
+        right: -40px;
+    }
+
+    .inner-slider {
+        display: flex;
+        overflow: hidden;
+    }
+}

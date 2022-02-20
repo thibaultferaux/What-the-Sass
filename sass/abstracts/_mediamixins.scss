@@ -1,0 +1,19 @@
+@use "../abstracts/variables" as vars;
+
+@mixin small {
+    @media (min-width: #{vars.$mobile-width}) and (max-width: #{vars.$small-width - 1px}) {
+        @content;
+    }
+}
+
+@mixin mobile {
+    @media (max-width: #{vars.$mobile-width}) {
+        @content;
+    }
+}
+
+@mixin large {
+    @media (min-width: #{vars.$large-width}) {
+        @content;
+    }
+}

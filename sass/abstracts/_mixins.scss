@@ -1,0 +1,15 @@
+@use "./functions" as func;
+
+@mixin absolutePos ($top, $right, $bottom, $left) {
+    position: absolute;
+    top: $top;
+    right: $right;
+    bottom: $bottom;
+    left: $left;
+}
+
+@mixin font ($size, $weight, $transform: initial) {
+    font-size: func.pxtorem($size);
+    font-weight: $weight;
+    text-transform: $transform;
+}

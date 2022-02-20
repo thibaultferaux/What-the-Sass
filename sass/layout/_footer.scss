@@ -1,0 +1,63 @@
+@use "../abstracts/variables" as vars;
+@use "../abstracts/extends";
+@use "../abstracts/mediamixins" as media;
+@use "../abstracts/functions" as func;
+
+@use "sass:map";
+
+.footer {
+    width: 100%;
+    border-top: 1px solid map.get(vars.$colors, black);
+
+    &__container {
+        margin-top: 20px;
+        padding: 0 12%;
+        display: flex;
+        flex-wrap: wrap;
+
+        @include media.small { padding: 0 3%; }
+    }
+
+    &__column {
+        padding: 20px;
+
+        @include media.mobile { flex-basis: 100%; text-align: center; }
+    }
+
+    &__item {
+        margin: 0;
+        padding-bottom: 5px;
+
+        a:hover {
+            text-decoration: underline;
+        }
+    }
+
+    &__socialButton {
+        display: inline-block;
+        padding: 0 5px 5px 0;
+
+        &:last-of-type {
+            padding-right: 0;
+        }
+
+        a {
+            font-size: func.pxtorem(20);
+            background-color: map.get(vars.$colors, black);
+            color: map.get(vars.$colors, white);
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            @extend %flex-fullCenter;
+        }
+
+        a:hover {
+            background-color: map.get(vars.$colors, white);
+            color: map.get(vars.$colors, grey);
+        }
+    }
+
+    &__newsletter-text {
+        margin-bottom: 25px;
+    }
+}

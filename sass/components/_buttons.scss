@@ -1,0 +1,18 @@
+@use "../abstracts/variables" as vars;
+@use '../abstracts/extends';
+
+@use "sass:map";
+
+.primary-button {
+    padding: 10px;
+    @extend %buttonTransition;
+}
+
+.secondary-button {
+    padding: 10px;
+    text-transform: uppercase;
+    font-weight: 700;
+    border: 1px solid map.get(vars.$colors, black);
+    border-bottom: none;
+    @extend %buttonTransition;
+}
